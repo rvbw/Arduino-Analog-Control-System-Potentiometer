@@ -57,37 +57,53 @@ Middle → A0
 Pin 9 → 220Ω → LED → GND  
 
 ## Arduino Code
-
 int buttonPin = 2;
+
 int ledPin = 8;
+
 int ledState = 0;     
+
 int lastButtonState = 0;
+
 int potPin = A0;
+
 int ledPins = 9;
 
 
 void setup() {
+ 
   pinMode(buttonPin, INPUT);
+  
   pinMode(ledPin, OUTPUT);
+  
   pinMode(ledPins, OUTPUT);
+
 }
 
 void loop() {
+  
   int buttonState = digitalRead(buttonPin);
 
   if (buttonState == 1 && lastButtonState == 0) {
+  
     ledState = !ledState;  
+    
     delay(200); 
+  
   }
 
+  
   digitalWrite(ledPin, ledState);
+
   lastButtonState = buttonState;
   
   //الانالوق 
   int value = analogRead(potPin);   
+ 
   int brightness = map(value, 0, 1023, 0, 255);
 
   analogWrite(ledPins, brightness); 
+
 }
 
 ## Circuit Diagram
