@@ -84,4 +84,4 @@ void loop() {
 ```
 
 ## Circuit Diagram
-(Add your circuit image here)
+![Planetary Gear Assembly](images/assembly.png)
